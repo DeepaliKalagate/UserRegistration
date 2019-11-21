@@ -62,8 +62,24 @@ function userMobileNumber()
         fi
 }
 
+#function for User Password Validation
+function userPassword()
+{
+        echo "Enter Password : "
+        read password
+
+        passwordPattern=[a-zA-Z0-9]{8,}
+        if [[ $password =~ $passwordPattern ]];
+        then
+                echo "Valid Password"
+        else
+                echo "Invalid Password "
+        fi
+}
+
 
 userFirstName
 userLastName
 userEmailValidation
 userMobileNumber
+userPassword
