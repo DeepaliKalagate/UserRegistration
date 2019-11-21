@@ -32,6 +32,22 @@ function userLastName()
         fi
 }
 
+#function for User Email Id Validation
+function userEmailValidation()
+{
+	echo "Enter User Email Id : "
+	read email
+
+	emailPattern="^([a-zA-Z0-9]+)([+_-.][a-zA-Z0-9]+)?+[@][a-zA-Z0-9]+[.][a-z]{2,3}*([.]?[a-z]{2,3})?$"
+	if [[ $email =~ $emailPattern ]];
+	then
+        	echo "User Email Id : $email"
+	else
+        	echo "Invalid Email Id : $email"
+	fi
+}
+
 
 userFirstName
 userLastName
+userEmailValidation
