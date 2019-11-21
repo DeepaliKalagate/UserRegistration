@@ -47,7 +47,23 @@ function userEmailValidation()
 	fi
 }
 
+#function for User Mobile Number Validation
+function userMobileNumber()
+{
+        echo "Enter User Mobile Number : "
+        read mobileNumber
+
+        mobilePattern='^[0-9]{2}[: :][0-9]{10}$' 
+        if [[ $mobileNumber =~ $mobilePattern ]];
+        then
+                echo "User Mobile Number : $mobileNumber"
+        else
+                echo "Invalid Mobile Number : $mobileNumber"
+        fi
+}
+
 
 userFirstName
 userLastName
 userEmailValidation
+userMobileNumber
