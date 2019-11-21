@@ -70,7 +70,7 @@ function userPassword()
 
         #passwordPattern=[a-zA-Z0-9]+{8,}
 	#passwordPattern="((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})"
-        passwordPattern="([a-zA-Z0-9])(.*[A-Z].*){8,}$"
+        passwordPattern="[a-z]*[A-Z]+[a-z]*{8}"
 	if [[ $password =~ $passwordPattern ]];
         then
                 echo "Valid Password"
