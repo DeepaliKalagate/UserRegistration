@@ -1,4 +1,5 @@
 #!/bin/bash 
+shopt -s extglob
 echo "Welcome to User Ragistration Using Regex"
 
 #function for User First Name Validation
@@ -68,10 +69,10 @@ function userPassword()
         echo "Enter Password : "
         read password
 
-        #passwordPattern=[a-zA-Z0-9]+{8,}
-	#passwordPattern="((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})"
-        passwordPattern="([a-zA-Z0-9])(.*[A-Z].*){8,}$"
-	if [[ $password =~ $passwordPattern ]];
+	#passwordPattern="[a-z]*[A-Z]+[a-z]*{8}"
+	#passwordPattern="[a-z]*[A-Z]+[a-z]*(0-9]*{8}"
+	passwordPattern="[a-z]*[A-Z]+[a-z]*(0-9]*{8}"
+	if [[ $password =~ $passwordPattern ]]
         then
                 echo "Valid Password"
         else
@@ -80,8 +81,8 @@ function userPassword()
 }
 
 
-#userFirstName
-#userLastName
-#userEmailValidation
-#userMobileNumber
+userFirstName
+userLastName
+userEmailValidation
+userMobileNumber
 userPassword
