@@ -69,9 +69,10 @@ function userPassword()
         echo "Enter Password : "
         read password
 
+	#passwordPattern="[a-zA-Z0-9]{8}
 	#passwordPattern="[a-z]*[A-Z]+[a-z]*{8}"
-	#passwordPattern="[a-z]*[A-Z]+[a-z]*(0-9]*{8}"
-	passwordPattern="[a-z]*[A-Z]+[a-z]*(0-9]*{8}"
+	#passwordPattern="[a-z]*[A-Z]+[a-z]*[0-9]*{8}"
+	passwordPattern="[a-z]*[A-Z]+[a-z]*[0-9]+[a-z]*[@$!%#_]*{8}"
 	if [[ $password =~ $passwordPattern ]]
         then
                 echo "Valid Password"
