@@ -15,3 +15,23 @@ function userFirstName()
         	echo "Invalid User Name : $firstName"
 	fi
 }
+
+
+#function for User Last Name Validation
+function userLastName()
+{
+        echo "Enter Last Name of User : "
+        read lastName
+
+        lastNamePattern=[A-Z][a-z]+{3,20}
+        if [[ $lastName =~ $lastNamePattern ]];
+        then
+                echo "Last Name of User :  $lastName"
+        else
+                echo "Invalid User Name : $lastName"
+        fi
+}
+
+
+userFirstName
+userLastName
