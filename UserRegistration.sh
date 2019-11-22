@@ -70,9 +70,14 @@ function userPassword()
         read password
 
 	#passwordPattern="[a-zA-Z0-9]{8}
-	#passwordPattern="[a-z]*[A-Z]+[a-z]*{8}"
+	#passwordPattern="[a-z]*[A-Z]+[a-z]+{8}"
 	#passwordPattern="[a-z]*[A-Z]+[a-z]*[0-9]*{8}"
-	passwordPattern="[a-z]*[A-Z]+[a-z]*[0-9]+[a-z]*[@$!%#_]*{8}"
+	#passwordPattern="[a-z]*[A-Z]+[a-z]*[0-9][a-z]*[@$!%#_]*{8}"
+
+
+	passwordPattern="[A-Z0-9]+[a-z]*[0-9]+[@$!%#_]{1}{8}"
+
+
 	if [[ $password =~ $passwordPattern ]]
         then
                 echo "Valid Password"
@@ -82,8 +87,8 @@ function userPassword()
 }
 
 
-userFirstName
-userLastName
-userEmailValidation
-userMobileNumber
+#userFirstName
+#userLastName
+#userEmailValidation
+#userMobileNumber
 userPassword
